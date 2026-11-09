@@ -111,6 +111,7 @@ impl std::fmt::Display for Value {
 }
 
 #[cfg(test)]
+#[allow(clippy::approx_constant)]
 mod tests {
     use super::*;
 

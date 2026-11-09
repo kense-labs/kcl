@@ -246,6 +246,7 @@ pub fn generate_from_map(data: &HashMap<String, Value>) -> String {
 }
 
 #[cfg(test)]
+#[allow(clippy::approx_constant)]
 mod tests {
     use super::*;
 
@@ -301,7 +302,7 @@ mod tests {
         let gen = Generator::new();
         let mut out = String::new();
         // Create a string with actual carriage return character
-        let with_cr = String::from("line") + &"\r" + "break";
+        let with_cr = String::from("line") + "\r" + "break";
         assert!(with_cr.contains('\r')); // Verify it contains CR
 
         gen.write_string(&with_cr, &mut out);
@@ -313,7 +314,7 @@ mod tests {
     fn test_string_escape_newline() {
         let gen = Generator::new();
         let mut out = String::new();
-        let with_nl = String::from("line") + &"\n" + "break";
+        let with_nl = String::from("line") + "\n" + "break";
         assert!(with_nl.contains('\n'));
 
         gen.write_string(&with_nl, &mut out);
@@ -324,7 +325,7 @@ mod tests {
     fn test_string_escape_tab() {
         let gen = Generator::new();
         let mut out = String::new();
-        let with_tab = String::from("line") + &"\t" + "break";
+        let with_tab = String::from("line") + "\t" + "break";
         assert!(with_tab.contains('\t'));
 
         gen.write_string(&with_tab, &mut out);
@@ -336,7 +337,7 @@ mod tests {
         let gen = Generator::new();
         let mut out = String::new();
         // Create a string with actual backslash character
-        let with_backslash = String::from("path") + &"\\" + "file";
+        let with_backslash = String::from("path") + "\\" + "file";
         assert!(with_backslash.contains('\\'));
 
         gen.write_string(&with_backslash, &mut out);

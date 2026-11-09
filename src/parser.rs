@@ -760,7 +760,7 @@ mod tests {
         assert_eq!(doc.blocks.len(), 1);
         let block = &doc.blocks[0];
         assert_eq!(block.name, "providers");
-        assert!(block.blocks.len() >= 1);
+        assert!(!block.blocks.is_empty());
     }
 
     #[test]

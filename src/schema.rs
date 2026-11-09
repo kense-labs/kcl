@@ -78,7 +78,7 @@ impl Cardinality {
     }
 
     pub(crate) fn contains(self, count: usize) -> bool {
-        count >= self.min && self.max.is_none_or(|max| count <= max)
+        count >= self.min && self.max.map_or(true, |max| count <= max)
     }
 
     pub(crate) fn describe(self, singular: &str, plural: &str) -> String {

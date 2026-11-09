@@ -1,6 +1,7 @@
 //! Parse KCL text, inspect the AST, then generate canonical-looking source.
 
-use kcl::{generate, parse, BlockBuilder, DocumentBuilder, boolean, number, string};
+use kcl::builder::{boolean, number, string, BlockBuilder, DocumentBuilder};
+use kcl::{generate, parse};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let input = r#"
