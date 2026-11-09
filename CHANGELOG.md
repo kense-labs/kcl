@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Removed
+
+- Documentation references to a Node.js/TypeScript SDK and the
+  `@kense-labs/acl` npm package. Neither the package nor a non-Rust SDK was
+  ever part of this repository; the project is Rust-only.
+
+### Fixed
+
+- Install instructions now use the correct package name `kense-kcl` and the
+  `kcl::builder` constructor paths.
+
 ## [0.3.0] - 2026-11-07
 
 ### Added

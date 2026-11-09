@@ -13,7 +13,7 @@ pub enum DiagnosticCode {
 }
 
 impl DiagnosticCode {
-    /// Return the cross-SDK wire representation of this diagnostic code.
+    /// Return the stable wire representation of this diagnostic code.
     pub const fn as_str(self) -> &'static str {
         match self {
             Self::DocumentBytesLimit => "kcl.limit.document_bytes",

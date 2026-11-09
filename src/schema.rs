@@ -392,7 +392,7 @@ pub enum SchemaDiagnosticCode {
 }
 
 impl SchemaDiagnosticCode {
-    /// Return the cross-SDK wire representation of this diagnostic code.
+    /// Return the stable wire representation of this diagnostic code.
     pub const fn as_str(self) -> &'static str {
         match self {
             Self::UnknownAttribute => "kcl.schema.unknown_attribute",

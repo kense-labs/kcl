@@ -13,12 +13,12 @@ pub const CANONICAL_DIGEST_ALGORITHM: &str = "sha256";
 pub enum CanonicalError {
     /// A programmatic AST contained NaN or an infinity.
     NonFiniteNumber,
-    /// An AST identifier was outside the portable cross-SDK grammar.
+    /// An AST identifier was outside the portable canonical grammar.
     UnsupportedIdentifier,
 }
 
 impl CanonicalError {
-    /// Returns the stable cross-SDK error code.
+    /// Returns the stable wire error code.
     pub const fn code(self) -> &'static str {
         match self {
             Self::NonFiniteNumber => "kcl.canonical.non_finite_number",

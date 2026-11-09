@@ -55,7 +55,7 @@ pub fn parse_kcl(input: &str) -> Result<Document, ParseError> {
     parse(input)
 }
 
-/// Alias kept for migration from older kacl/aster-acl call sites.
+/// Alias kept for compatibility with older call sites.
 #[doc(hidden)]
 pub fn parse_acl(input: &str) -> Result<Document, ParseError> {
     parse_kcl(input)
@@ -88,7 +88,7 @@ pub fn generate_kcl(doc: &Document) -> String {
     generate(doc)
 }
 
-/// Alias kept for migration from older kacl/aster-acl call sites.
+/// Alias kept for compatibility with older call sites.
 #[doc(hidden)]
 pub fn generate_acl(doc: &Document) -> String {
     generate_kcl(doc)
