@@ -6,7 +6,7 @@ Configuration Language, implemented as a single Rust crate.
 > **Rust only.** This repository provides the `kense-kcl` crate (library name
 > `kcl`). No SDKs, bindings, or documentation for other languages are provided.
 
-## 概述
+## Overview
 
 A lightweight, typed configuration language for agent configurations. KCL is
 designed for defining structured agent behaviors with blocks, attributes, and
@@ -53,12 +53,16 @@ nested "label" {
 
 ## Installation
 
+> **Not yet published to crates.io.** Until the first release, depend on this
+> repository directly. Once published, replace the dependency with
+> `kense-kcl = "0.3.0"`.
+
 Add the crate to your `Cargo.toml`. The package is named `kense-kcl`; the
 library target (and therefore the name used in `use` statements) is `kcl`.
 
 ```toml
 [dependencies]
-kense-kcl = "0.3.0"
+kense-kcl = { git = "https://github.com/kense-labs/kcl", branch = "main" }
 ```
 
 ```rust
