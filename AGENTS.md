@@ -4,7 +4,8 @@
 
 - **This is a standalone project.** KCL is its own Git repository and its own
   release unit; it is not a directory, crate or submodule of `kbox` or `krun`,
-  and it is not a sibling `../kcl` working tree on a developer machine.
+  and it must not be confused with the legacy stand-in exported from kbox's
+  historical `crates/acl`.
 - Single Rust library crate: package `kense-kcl`, library target `kcl`,
   edition 2021, MSRV 1.70, MIT. `Cargo.lock` is intentionally not committed
   (`.gitignore`); this is a library, not an application workspace.
@@ -95,9 +96,9 @@ revision bump to downstream consumers.
 
 ## Local note (not part of the repository contract)
 
-Some developer machines may also contain a sibling directory named `kcl`.
-Such a directory is **not** this project: one known example is a non-Git,
-13-file stand-in exported from kbox's historical `crates/acl` in November
-2026 (its README is still titled `# kacl`). No manifest references it. Treat
-this repository as the authoritative source and never link a local stand-in
-as a `path = "../kcl"` dependency.
+Some developer machines may also contain a legacy sibling directory exported
+from kbox's historical `crates/acl` in November 2026: a non-Git, 13-file
+stand-in whose README is titled `# kacl` and which is clearly marked
+DEPRECATED. It is **not** this project and no manifest references it. Treat
+this repository as the authoritative source, and never link a local stand-in
+as a `path` dependency.
